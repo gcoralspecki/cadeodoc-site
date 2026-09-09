@@ -1,0 +1,21 @@
+# Quais arquivos o git NAO pode tratar como texto.
+#
+# No Windows o git converte quebras de linha (LF vira CRLF). Em texto e
+# inofensivo; em binario cada byte 0x0A vira 0x0D 0x0A, o arquivo muda de
+# tamanho e para de abrir. Um icone corrompido nao da erro: ele simplesmente
+# nao aparece, e ninguem sabe por que.
+#
+# A ORDEM IMPORTA: vence a ULTIMA regra que casa, nao a mais especifica.
+# Regra geral primeiro, excecoes depois.
+
+* text=auto
+
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.woff  binary
+*.woff2 binary
