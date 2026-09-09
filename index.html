@@ -81,28 +81,32 @@
 
   section { padding-bottom: 8px; }
 
-  .passos { list-style: none; padding: 0; margin: 24px 0 0; counter-reset: n; }
-  .passos li {
+  .jornada { list-style: none; padding: 0; margin: 26px 0 0; counter-reset: n; }
+  .jornada li {
     counter-increment: n;
-    position: relative;
-    padding: 18px 0 18px 52px;
+    display: grid; grid-template-columns: 116px 1fr; gap: 22px;
+    align-items: center;
+    padding: 20px 0;
     border-top: 1px solid var(--linha);
   }
-  .passos li::before {
-    content: counter(n);
-    position: absolute;
-    left: 0; top: 18px;
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    background: var(--ambar);
-    color: var(--tinta);
-    font-weight: 600;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
-    display: flex; align-items: center; justify-content: center;
+  .cena {
+    width: 116px; height: 116px; display: block;
+    border-radius: 16px; background: var(--creme);
   }
-  .passos strong { display: block; font-weight: 600; }
-  .passos span { color: var(--tinta-fraca); font-size: 16px; }
+  .jornada strong {
+    display: block; font-weight: 700; font-size: 17.5px; margin-bottom: 3px;
+  }
+  /* O numero do passo entra pelo CSS, e nao no texto, para a ordem se manter
+     sozinha se um passo for acrescentado ou removido depois. */
+  .jornada strong::before {
+    content: counter(n);
+    display: inline-grid; place-items: center;
+    width: 21px; height: 21px; border-radius: 50%;
+    background: var(--ambar); color: var(--tinta);
+    font-size: 12px; font-weight: 700;
+    margin-right: 9px; vertical-align: 1px;
+  }
+  .jornada span { color: var(--tinta-fraca); font-size: 16px; }
 
   .quadro {
     background: var(--papel);
@@ -173,22 +177,77 @@
 
   <section>
     <h2>Como funciona</h2>
-    <ol class="passos">
+    <ol class="jornada">
       <li>
-        <strong>Você manda no WhatsApp</strong>
-        <span>Boleto, ART, matrícula, contrato, foto do protocolo. Do jeito que já faz hoje, sem aprender nada novo.</span>
+        <svg class="cena" viewBox="0 0 100 100" role="img" aria-label="Enviando o documento pelo WhatsApp">
+          <path d="M22 22 h56 a7 7 0 0 1 7 7 v30 a7 7 0 0 1 -7 7 h-38 l-13 10 v-10 h-5 a7 7 0 0 1 -7 -7 v-30 a7 7 0 0 1 7 -7 z"
+                fill="#F5A623" stroke="#1B1A16" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="34" y="32" width="20" height="26" rx="3" fill="#FFFFFF" stroke="#1B1A16" stroke-width="2.6"/>
+          <rect x="38" y="38" width="12" height="2.6" rx="1.3" fill="#8C867C"/>
+          <rect x="38" y="44" width="9" height="2.6" rx="1.3" fill="#8C867C"/>
+          <path d="M62 40 L72 45 L62 50" fill="none" stroke="#1B1A16"
+                stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <strong>Você manda no WhatsApp</strong>
+          <span>Boleto, ART, matrícula, contrato, foto do protocolo. Do jeito que já faz hoje, sem aprender nada novo.</span>
+        </div>
       </li>
       <li>
-        <strong>Ele reconhece e guarda</strong>
-        <span>O documento vai para a pasta certa do seu próprio Google Drive, com nome padronizado e data.</span>
+        <svg class="cena" viewBox="0 0 100 100" role="img" aria-label="Guardado na pasta certa do seu Drive">
+          <rect x="36" y="10" width="30" height="30" rx="3.5" fill="#FFFFFF"
+                stroke="#1B1A16" stroke-width="2.8" transform="rotate(8 51 25)"/>
+          <path d="M51 42 L51 50" stroke="#F5A623" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M46 46 L51 51 L56 46" fill="none" stroke="#F5A623"
+                stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 60 v-6 a4 4 0 0 1 4 -4 h14 l5 6 h45 a4 4 0 0 1 4 4 v2 z"
+                fill="#D98B0A" stroke="#1B1A16" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="14" y="58" width="72" height="28" rx="4.5" fill="#F5A623"
+                stroke="#1B1A16" stroke-width="3"/>
+          <path d="M40 71 l6 7 l14 -14" fill="none" stroke="#1B1A16"
+                stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <strong>Ele reconhece e guarda</strong>
+          <span>O documento vai para a pasta certa do seu próprio Google Drive, com nome padronizado e data.</span>
+        </div>
       </li>
       <li>
-        <strong>Quando não tem certeza, pergunta</strong>
-        <span>Em vez de chutar, ele manda um menu com as opções. Você toca em uma e pronto. Da próxima vez ele já sabe.</span>
+        <svg class="cena" viewBox="0 0 100 100" role="img" aria-label="Ela pergunta quando nao tem certeza">
+          <path d="M16 20 h68 a7 7 0 0 1 7 7 v26 a7 7 0 0 1 -7 7 h-52 l-12 9 v-9 h-4 a7 7 0 0 1 -7 -7 v-26 a7 7 0 0 1 7 -7 z"
+                fill="#FFFFFF" stroke="#1B1A16" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M32 36 A 6.4 6.4 0 0 1 38.4 29.6 A 6.4 6.4 0 0 1 44.8 36 A 6.4 6.4 0 0 1 38.4 42.4"
+                fill="none" stroke="#1B1A16" stroke-width="4.4"/>
+          <path d="M38.4 40.2 L38.4 46" stroke="#1B1A16" stroke-width="4.4"/>
+          <rect x="35.9" y="49.5" width="5" height="5" rx="1.3" fill="#1B1A16"/>
+          <rect x="53" y="30" width="30" height="9" rx="4.5" fill="#F5A623" stroke="#1B1A16" stroke-width="2.4"/>
+          <rect x="53" y="42" width="30" height="9" rx="4.5" fill="#FDEBC8" stroke="#1B1A16" stroke-width="2.4"/>
+          <path d="M76 56 l4 7 l3 -3 l5 4" fill="none" stroke="#1B1A16"
+                stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <strong>Quando não tem certeza, pergunta</strong>
+          <span>Em vez de chutar, ele manda um menu com as opções. Você toca em uma e pronto. Da próxima vez ele já sabe.</span>
+        </div>
       </li>
       <li>
-        <strong>Depois é só perguntar onde está</strong>
-        <span>"Cadê a ART da obra da farmácia?" e você recebe o link. É para isso que ele existe.</span>
+        <svg class="cena" viewBox="0 0 100 100" role="img" aria-label="Voce pergunta e ela devolve o documento">
+          <path d="M12 18 h40 a6 6 0 0 1 6 6 v14 a6 6 0 0 1 -6 6 h-28 l-10 7 v-7 h-2 a6 6 0 0 1 -6 -6 v-14 a6 6 0 0 1 6 -6 z"
+                fill="#F5A623" stroke="#1B1A16" stroke-width="2.8" stroke-linejoin="round"/>
+          <rect x="20" y="26" width="24" height="3.6" rx="1.8" fill="#1B1A16"/>
+          <rect x="20" y="33" width="15" height="3.6" rx="1.8" fill="#1B1A16"/>
+          <rect x="40" y="50" width="34" height="40" rx="4" fill="#FFFFFF" stroke="#1B1A16" stroke-width="3"/>
+          <rect x="46" y="58" width="20" height="3" rx="1.5" fill="#8C867C"/>
+          <rect x="46" y="65" width="14" height="3" rx="1.5" fill="#8C867C"/>
+          <path d="M46 76 l5 6 l12 -12" fill="none" stroke="#F5A623"
+                stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M30 52 q -2 12 12 14" fill="none" stroke="#1B1A16"
+                stroke-width="2.6" stroke-dasharray="4 5" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <strong>Depois é só perguntar onde está</strong>
+          <span>"Cadê a ART da obra da farmácia?" e você recebe o link. É para isso que ele existe.</span>
+        </div>
       </li>
     </ol>
   </section>
