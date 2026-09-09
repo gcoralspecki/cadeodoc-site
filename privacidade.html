@@ -7,26 +7,34 @@
 <meta name="description" content="Como o Cadê o Doc trata seus dados: o que coleta, onde guarda, com quem compartilha e como você pede exclusão.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="icone-32.png" sizes="32x32">
+<link rel="icon" href="icone-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="icone-180.png">
+<meta name="theme-color" content="#F5A623">
 <style>
   :root {
-    --creme-fundo: #fdfaf5;
-    --papel: #ffffff;
-    --tinta: #2b2521;
-    --tinta-media: #4a4039;
-    --tinta-fraca: #6e6058;
-    --tinta-clara: #9a8b7d;
-    --linha: #ece2d6;
-    --linha-forte: #ddd4c8;
-    --destaque: #c4713a;
-    --destaque-fundo: #fdf0e2;
+    /* A marca: ver marca/LEIA-ME.md */
+    --ambar: #F5A623;          /* preenchimento, nunca texto */
+    --destaque: #8F5E00;       /* o mesmo ambar, legivel como texto */
+    --destaque-fundo: #FDF1D8;
+
+    --creme: #F2EDE3;
+    --creme-fundo: #FAF8F3;
+    --papel: #FFFFFF;
+    --tinta: #1B1A16;          /* grafite quente: preto puro brigaria com o ambar */
+    --tinta-media: #3D3A33;
+    --tinta-fraca: #605B51;
+    --tinta-clara: #8C867C;    /* pedra */
+    --linha: #E8E3D8;
+    --linha-forte: #D6D0C2;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     background: var(--creme-fundo);
     color: var(--tinta);
-    font-family: Karla, system-ui, -apple-system, sans-serif;
+    font-family: Archivo, system-ui, -apple-system, sans-serif;
     font-size: 17px;
     line-height: 1.68;
     -webkit-font-smoothing: antialiased;
@@ -43,7 +51,7 @@
     font-weight: 500;
   }
   h1 {
-    font-family: Newsreader, Georgia, serif;
+    font-family: Archivo, sans-serif; font-weight: 700;
     font-weight: 400;
     font-size: 34px;
     margin: 24px 0 8px;
@@ -51,7 +59,7 @@
   .datas { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--tinta-clara); }
 
   h2 {
-    font-family: Newsreader, Georgia, serif;
+    font-family: Archivo, sans-serif; font-weight: 700;
     font-weight: 400;
     font-size: 23px;
     margin: 48px 0 12px;
@@ -67,7 +75,7 @@
   .resumo {
     background: var(--papel);
     border: 1px solid var(--linha);
-    border-left: 3px solid var(--destaque);
+    border-left: 3px solid var(--ambar);
     border-radius: 8px;
     padding: 22px 26px;
     margin: 28px 0 8px;

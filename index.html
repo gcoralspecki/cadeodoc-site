@@ -7,27 +7,34 @@
 <meta name="description" content="Você manda o documento no WhatsApp e ele aparece arrumado na pasta certa do seu Google Drive. Depois é só perguntar onde está.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="icone-32.png" sizes="32x32">
+<link rel="icon" href="icone-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="icone-180.png">
+<meta name="theme-color" content="#F5A623">
 <style>
   :root {
-    --creme: #f7f1e8;
-    --creme-fundo: #fdfaf5;
-    --papel: #ffffff;
-    --tinta: #2b2521;
-    --tinta-media: #4a4039;
-    --tinta-fraca: #6e6058;
-    --tinta-clara: #9a8b7d;
-    --linha: #ece2d6;
-    --linha-forte: #ddd4c8;
-    --destaque: #c4713a;
-    --destaque-fundo: #fdf0e2;
+    /* A marca: ver marca/LEIA-ME.md */
+    --ambar: #F5A623;          /* preenchimento, nunca texto */
+    --destaque: #8F5E00;       /* o mesmo ambar, legivel como texto */
+    --destaque-fundo: #FDF1D8;
+
+    --creme: #F2EDE3;
+    --creme-fundo: #FAF8F3;
+    --papel: #FFFFFF;
+    --tinta: #1B1A16;          /* grafite quente: preto puro brigaria com o ambar */
+    --tinta-media: #3D3A33;
+    --tinta-fraca: #605B51;
+    --tinta-clara: #8C867C;    /* pedra */
+    --linha: #E8E3D8;
+    --linha-forte: #D6D0C2;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     background: var(--creme-fundo);
     color: var(--tinta);
-    font-family: Karla, system-ui, -apple-system, sans-serif;
+    font-family: Archivo, system-ui, -apple-system, sans-serif;
     font-size: 17px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -43,23 +50,31 @@
     color: var(--destaque);
     font-weight: 500;
   }
+  .cabeca { display: flex; align-items: center; gap: 14px; }
+  .selo { display: block; border-radius: 12px; flex: none; }
   .subtitulo { font-size: 15px; color: var(--tinta-clara); margin-top: 4px; }
 
   h1 {
-    font-family: Newsreader, Georgia, serif;
-    font-weight: 400;
-    font-size: 40px;
+    font-family: 'Archivo Black', Archivo, sans-serif;
+    font-size: 38px;
     line-height: 1.2;
     margin: 32px 0 0;
     letter-spacing: -0.01em;
   }
-  h1 em { font-style: normal; color: var(--destaque); }
+  h1 em {
+    font-style: normal;
+    background-image: linear-gradient(var(--ambar), var(--ambar));
+    background-repeat: no-repeat;
+    background-size: 100% .13em;
+    background-position: 0 100%;
+  }
   .chamada { font-size: 19px; color: var(--tinta-fraca); margin-top: 16px; max-width: 34em; }
 
   h2 {
-    font-family: Newsreader, Georgia, serif;
-    font-weight: 400;
-    font-size: 26px;
+    font-family: Archivo, sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: -.015em;
     margin: 56px 0 16px;
   }
   h3 { font-size: 17px; margin: 28px 0 6px; }
@@ -79,8 +94,9 @@
     left: 0; top: 18px;
     width: 32px; height: 32px;
     border-radius: 50%;
-    background: var(--destaque-fundo);
-    color: var(--destaque);
+    background: var(--ambar);
+    color: var(--tinta);
+    font-weight: 600;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 14px;
     display: flex; align-items: center; justify-content: center;
@@ -107,11 +123,11 @@
   .duas h3 { margin-top: 0; }
   .duas ul { margin: 0; padding-left: 18px; color: var(--tinta-fraca); font-size: 16px; }
   .duas li { margin-bottom: 6px; }
-  .sim h3 { color: #4a7a4a; }
-  .nao h3 { color: #9a5a4a; }
+  .sim h3 { color: #3F6B3F; }
+  .nao h3 { color: #8C4432; }
 
   .destaque-linha {
-    border-left: 3px solid var(--destaque);
+    border-left: 3px solid var(--ambar);
     padding-left: 18px;
     margin: 24px 0;
     color: var(--tinta-media);
@@ -140,10 +156,15 @@
 <div class="faixa">
 
   <header>
-    <div class="marca">Cadê o Doc</div>
-    <div class="subtitulo">sua secretária de bolso</div>
+    <div class="cabeca">
+      <img src="icone-192.png" alt="" width="54" height="54" class="selo">
+      <div>
+        <div class="marca">Cadê o Doc</div>
+        <div class="subtitulo">sua secretária de bolso</div>
+      </div>
+    </div>
 
-    <h1>Você manda o documento no WhatsApp.<br><em>Ele aparece arrumado no seu Drive.</em></h1>
+    <h1>Você manda o documento no WhatsApp.<br>Ele aparece <em>arrumado</em> no seu Drive.</h1>
     <p class="chamada">
       Feito para engenheiros, projetistas e profissionais autônomos que recebem
       documento o dia inteiro e nunca têm tempo de organizar.
