@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadê o Doc: sua secretária de bolso</title>
+<meta name="description" content="Você manda o documento no WhatsApp e ele aparece arrumado na pasta certa do seu Google Drive. Depois é só perguntar onde está.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --creme: #f7f1e8;
+    --creme-fundo: #fdfaf5;
+    --papel: #ffffff;
+    --tinta: #2b2521;
+    --tinta-media: #4a4039;
+    --tinta-fraca: #6e6058;
+    --tinta-clara: #9a8b7d;
+    --linha: #ece2d6;
+    --linha-forte: #ddd4c8;
+    --destaque: #c4713a;
+    --destaque-fundo: #fdf0e2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--creme-fundo);
+    color: var(--tinta);
+    font-family: Karla, system-ui, -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .faixa { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 56px 0 40px; }
+  .marca {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--destaque);
+    font-weight: 500;
+  }
+  .subtitulo { font-size: 15px; color: var(--tinta-clara); margin-top: 4px; }
+
+  h1 {
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 32px 0 0;
+    letter-spacing: -0.01em;
+  }
+  h1 em { font-style: normal; color: var(--destaque); }
+  .chamada { font-size: 19px; color: var(--tinta-fraca); margin-top: 16px; max-width: 34em; }
+
+  h2 {
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 400;
+    font-size: 26px;
+    margin: 56px 0 16px;
+  }
+  h3 { font-size: 17px; margin: 28px 0 6px; }
+
+  section { padding-bottom: 8px; }
+
+  .passos { list-style: none; padding: 0; margin: 24px 0 0; counter-reset: n; }
+  .passos li {
+    counter-increment: n;
+    position: relative;
+    padding: 18px 0 18px 52px;
+    border-top: 1px solid var(--linha);
+  }
+  .passos li::before {
+    content: counter(n);
+    position: absolute;
+    left: 0; top: 18px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--destaque-fundo);
+    color: var(--destaque);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .passos strong { display: block; font-weight: 600; }
+  .passos span { color: var(--tinta-fraca); font-size: 16px; }
+
+  .quadro {
+    background: var(--papel);
+    border: 1px solid var(--linha);
+    border-radius: 10px;
+    padding: 24px 26px;
+    margin-top: 24px;
+  }
+  .quadro p:last-child { margin-bottom: 0; }
+
+  .duas { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+  .duas > div {
+    background: var(--papel);
+    border: 1px solid var(--linha);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .duas h3 { margin-top: 0; }
+  .duas ul { margin: 0; padding-left: 18px; color: var(--tinta-fraca); font-size: 16px; }
+  .duas li { margin-bottom: 6px; }
+  .sim h3 { color: #4a7a4a; }
+  .nao h3 { color: #9a5a4a; }
+
+  .destaque-linha {
+    border-left: 3px solid var(--destaque);
+    padding-left: 18px;
+    margin: 24px 0;
+    color: var(--tinta-media);
+  }
+
+  footer {
+    margin-top: 64px;
+    border-top: 1px solid var(--linha-forte);
+    padding: 28px 0 56px;
+    font-size: 15px;
+    color: var(--tinta-clara);
+  }
+  footer a { color: var(--tinta-fraca); }
+  .empresa { font-family: 'IBM Plex Mono', monospace; font-size: 13px; margin-top: 14px; line-height: 1.8; }
+  a { color: var(--destaque); }
+
+  @media (max-width: 620px) {
+    h1 { font-size: 30px; }
+    .duas { grid-template-columns: 1fr; }
+    body { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="faixa">
+
+  <header>
+    <div class="marca">Cadê o Doc</div>
+    <div class="subtitulo">sua secretária de bolso</div>
+
+    <h1>Você manda o documento no WhatsApp.<br><em>Ele aparece arrumado no seu Drive.</em></h1>
+    <p class="chamada">
+      Feito para engenheiros, projetistas e profissionais autônomos que recebem
+      documento o dia inteiro e nunca têm tempo de organizar.
+    </p>
+  </header>
+
+  <section>
+    <h2>Como funciona</h2>
+    <ol class="passos">
+      <li>
+        <strong>Você manda no WhatsApp</strong>
+        <span>Boleto, ART, matrícula, contrato, foto do protocolo. Do jeito que já faz hoje, sem aprender nada novo.</span>
+      </li>
+      <li>
+        <strong>Ele reconhece e guarda</strong>
+        <span>O documento vai para a pasta certa do seu próprio Google Drive, com nome padronizado e data.</span>
+      </li>
+      <li>
+        <strong>Quando não tem certeza, pergunta</strong>
+        <span>Em vez de chutar, ele manda um menu com as opções. Você toca em uma e pronto. Da próxima vez ele já sabe.</span>
+      </li>
+      <li>
+        <strong>Depois é só perguntar onde está</strong>
+        <span>"Cadê a ART da obra da farmácia?" e você recebe o link. É para isso que ele existe.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Seus arquivos são seus</h2>
+    <div class="quadro">
+      <p>
+        Os documentos ficam no <strong>seu</strong> Google Drive, na sua conta, nas suas pastas.
+        Não guardamos cópia em servidor nenhum.
+      </p>
+      <p>
+        A autorização que o app pede é a mais restrita que o Google oferece: ele enxerga
+        apenas os arquivos e pastas que ele mesmo criou. O resto do seu Drive continua
+        invisível para nós.
+      </p>
+      <p>
+        Se um dia você cancelar, tudo continua exatamente onde está. Não há nada para
+        resgatar, porque nada estava conosco.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>O que ele faz, e o que não faz</h2>
+    <div class="duas">
+      <div class="sim">
+        <h3>Faz</h3>
+        <ul>
+          <li>Guarda o documento na pasta certa</li>
+          <li>Padroniza o nome e a data</li>
+          <li>Anota boletos numa planilha: valor, vencimento e para quem</li>
+          <li>Avisa de vencimento chegando</li>
+          <li>Devolve o link quando você procura</li>
+        </ul>
+      </div>
+      <div class="nao">
+        <h3>Não faz</h3>
+        <ul>
+          <li>Não paga conta nenhuma</li>
+          <li>Não movimenta dinheiro</li>
+          <li>Não faz sua contabilidade</li>
+          <li>Não opina sobre suas finanças</li>
+          <li>Não usa seus documentos para treinar inteligência artificial</li>
+        </ul>
+      </div>
+    </div>
+    <p class="destaque-linha">
+      A última linha merece explicação: o reconhecimento dos documentos é feito por regras
+      e leitura de texto, no nosso servidor, sem enviar nada para serviço de inteligência
+      artificial de terceiros. Seus documentos não alimentam modelo nenhum.
+    </p>
+  </section>
+
+  <section>
+    <h2>Quanto custa</h2>
+    <div class="quadro">
+      <p>
+        O produto está em desenvolvimento e ainda não está à venda. Quando estiver, o preço
+        e as condições aparecerão aqui e na loja de aplicativos, antes de qualquer cobrança.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      <a href="privacidade.html">Política de Privacidade</a>
+      &nbsp;&middot;&nbsp;
+      <a href="termos.html">Termos de Serviço</a>
+      &nbsp;&middot;&nbsp;
+      <a href="mailto:contato@cadeodoc.com.br">contato@cadeodoc.com.br</a>
+    </p>
+    <p class="empresa">
+      Cadê o Doc é um produto de<br>
+      ACSY ENGENHARIA LTDA &nbsp;|&nbsp; CNPJ 68.392.643/0001-61<br>
+      Rua Blumenau, 178, sala 309, Centro, Joinville, SC, CEP 89.204-250
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>
