@@ -42,25 +42,22 @@
   .faixa { max-width: 720px; margin: 0 auto; padding: 0 24px; }
 
   header { padding: 48px 0 8px; }
-  .marca {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--destaque);
-    font-weight: 500;
-  }
+  /* O logotipo e desenho, nao texto: ver marca/desenhar-logotipo.py */
+  .cabeca { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+  .selo { display: block; border-radius: 10px; flex: none; }
+  .logotipo { display: block; height: 20px; width: auto; }
   h1 {
-    font-family: Archivo, sans-serif; font-weight: 700;
-    font-weight: 400;
+    font-family: 'Archivo Black', Archivo, sans-serif;
     font-size: 34px;
+    letter-spacing: -0.01em;
     margin: 24px 0 8px;
   }
   .datas { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--tinta-clara); }
 
   h2 {
-    font-family: Archivo, sans-serif; font-weight: 700;
-    font-weight: 400;
+    font-family: Archivo, sans-serif;
+    font-weight: 700;
+    letter-spacing: -.015em;
     font-size: 23px;
     margin: 48px 0 12px;
     padding-top: 20px;
@@ -127,7 +124,7 @@
 <div class="faixa">
 
   <header>
-    <div class="marca">Cadê o Doc</div>
+    <a class="cabeca" href="index.html"><img src="icone-192.png" alt="" width="40" height="40" class="selo"><img src="logotipo-claro.svg" alt="Cadê o Doc" width="176" height="20" class="logotipo"></a>
     <h1>Termos de Serviço</h1>
     <p class="datas">Versão 1. Vigente desde 09/09/2026.</p>
   </header>

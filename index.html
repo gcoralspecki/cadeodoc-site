@@ -42,14 +42,8 @@
   .faixa { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
   header { padding: 56px 0 40px; }
-  .marca {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--destaque);
-    font-weight: 500;
-  }
+  /* O logotipo e desenho, nao texto: ver marca/desenhar-logotipo.py */
+  .logotipo { display: block; height: 24px; width: auto; }
   .cabeca { display: flex; align-items: center; gap: 14px; }
   .selo { display: block; border-radius: 12px; flex: none; }
   .subtitulo { font-size: 15px; color: var(--tinta-clara); margin-top: 4px; }
@@ -163,7 +157,7 @@
     <div class="cabeca">
       <img src="icone-192.png" alt="" width="54" height="54" class="selo">
       <div>
-        <div class="marca">Cadê o Doc</div>
+        <img src="logotipo-claro.svg" alt="Cadê o Doc" width="211" height="24" class="logotipo">
         <div class="subtitulo">sua secretária de bolso</div>
       </div>
     </div>
