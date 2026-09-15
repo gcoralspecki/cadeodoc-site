@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Excluir sua conta | Cadê o Doc</title>
+<meta name="description" content="Como excluir sua conta do Cadê o Doc, pelo aplicativo ou por e-mail: seus dados são apagados na hora, e seus documentos continuam no seu Google Drive.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="icone-32.png" sizes="32x32">
+<link rel="icon" href="icone-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="icone-180.png">
+<meta name="theme-color" content="#F5A623">
+<style>
+  :root {
+    /* A marca: ver marca/LEIA-ME.md */
+    --ambar: #F5A623;          /* preenchimento, nunca texto */
+    --destaque: #8F5E00;       /* o mesmo ambar, legivel como texto */
+    --destaque-fundo: #FDF1D8;
+    --terracota: #B8563C;      /* o aviso serio, que nao e vermelho */
+
+    --creme: #F2EDE3;
+    --creme-fundo: #FAF8F3;
+    --papel: #FFFFFF;
+    --tinta: #1B1A16;          /* grafite quente: preto puro brigaria com o ambar */
+    --tinta-media: #3D3A33;
+    --tinta-fraca: #605B51;
+    --tinta-clara: #8C867C;    /* pedra */
+    --linha: #E8E3D8;
+    --linha-forte: #D6D0C2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--creme-fundo);
+    color: var(--tinta);
+    font-family: Archivo, system-ui, -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+  .faixa { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 48px 0 8px; }
+  /* O logotipo e desenho, nao texto: ver marca/desenhar-logotipo.py */
+  .cabeca { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+  .selo { display: block; border-radius: 10px; flex: none; }
+  .logotipo { display: block; height: 20px; width: auto; }
+  h1 {
+    font-family: 'Archivo Black', Archivo, sans-serif;
+    font-size: 34px;
+    letter-spacing: -0.01em;
+    margin: 24px 0 8px;
+  }
+  .datas { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--tinta-clara); }
+
+  h2 {
+    font-family: Archivo, sans-serif;
+    font-weight: 700;
+    letter-spacing: -.015em;
+    font-size: 23px;
+    margin: 48px 0 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--linha);
+  }
+  p { margin: 12px 0; }
+  ul, ol { padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  strong { font-weight: 600; }
+
+  .resumo {
+    background: var(--papel);
+    border: 1px solid var(--linha);
+    border-left: 3px solid var(--ambar);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 28px 0 8px;
+  }
+  .resumo h2 { border: 0; margin: 0 0 10px; padding: 0; font-size: 20px; }
+  .resumo ul { margin: 10px 0 0; }
+  .resumo li { color: var(--tinta-media); }
+
+  .caixa {
+    background: var(--papel);
+    border: 1px solid var(--linha);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 18px 0;
+    font-size: 16px;
+  }
+  .caixa p:first-child { margin-top: 0; }
+  .caixa p:last-child { margin-bottom: 0; }
+  .caixa.perigo { border-left: 3px solid var(--terracota); }
+
+  /* Os passos pelo aplicativo, numerados em ambar como no app. */
+  .passos { list-style: none; padding: 0; margin: 18px 0; counter-reset: passo; }
+  .passos li {
+    counter-increment: passo;
+    position: relative;
+    padding: 2px 0 10px 44px;
+    margin: 0;
+  }
+  .passos li::before {
+    content: counter(passo);
+    position: absolute; left: 0; top: 2px;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--ambar); color: var(--tinta);
+    font-weight: 700; font-size: 14px;
+    display: grid; place-items: center;
+  }
+
+  footer {
+    margin-top: 56px;
+    border-top: 1px solid var(--linha-forte);
+    padding: 26px 0 56px;
+    font-size: 15px;
+    color: var(--tinta-clara);
+  }
+  .empresa { font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.8; margin-top: 12px; }
+  a { color: var(--destaque); overflow-wrap: anywhere; }
+
+  @media (max-width: 620px) {
+    h1 { font-size: 27px; }
+    body { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="faixa">
+
+  <header>
+    <a class="cabeca" href="index.html"><img src="icone-192.png" alt="" width="40" height="40" class="selo"><img src="logotipo-claro.svg" alt="Cadê o Doc" width="176" height="20" class="logotipo"></a>
+    <h1>Excluir sua conta do Cadê o Doc</h1>
+    <p class="datas">Cadê o Doc, aplicativo da ACSY ENGENHARIA LTDA.</p>
+  </header>
+
+  <div class="resumo">
+    <h2>O essencial</h2>
+    <ul>
+      <li>Você pode excluir sua conta <strong>pelo aplicativo</strong>, a qualquer momento, ou <strong>por e-mail</strong>, se não tiver mais o aplicativo.</li>
+      <li>Apagamos na hora <strong>seu cadastro, seu número de WhatsApp, seus lembretes</strong> e <strong>o acesso do Cadê o Doc ao seu Google Drive</strong>.</li>
+      <li><strong>Seus documentos continuam no seu Google Drive.</strong> Eles são seus, e a exclusão não mexe neles.</li>
+      <li>Ficam apenas os registros que a lei manda guardar, por prazo fixo, listados abaixo.</li>
+    </ul>
+  </div>
+
+  <h2>Pelo aplicativo</h2>
+  <ol class="passos">
+    <li>Abra o Cadê o Doc no seu celular.</li>
+    <li>Toque em <strong>Conta</strong>, na barra de baixo.</li>
+    <li>Role até o fim da tela e toque em <strong>Excluir minha conta</strong>.</li>
+    <li>Leia o que será apagado, digite <strong>EXCLUIR</strong> no campo e toque em <strong>Excluir minha conta</strong>.</li>
+  </ol>
+  <p>Pronto. A exclusão vale na hora: você sai do aplicativo em todos os celulares, e o Cadê o Doc deixa de guardar documentos para você. Se você for assinante, a assinatura na Google Play é cancelada junto.</p>
+
+  <h2>Sem o aplicativo, por e-mail</h2>
+  <p>
+    Escreva para <a href="mailto:gcs.cadeodoc@gmail.com?subject=Excluir%20minha%20conta">gcs.cadeodoc@gmail.com</a>
+    com o assunto <strong>Excluir minha conta</strong>. No texto, informe o número de WhatsApp da conta.
+    Mandando do mesmo e-mail da Conta Google ligada ao Cadê o Doc, fica mais rápido.
+  </p>
+  <p>
+    Confirmamos o recebimento e, para proteger você, podemos pedir uma confirmação pelo WhatsApp cadastrado ou, se você
+    não tiver mais esse número, pelo e-mail da Conta Google ligada à conta. A exclusão pedida por e-mail é feita em até
+    <strong>5 dias</strong>, e avisamos quando estiver pronta.
+  </p>
+
+  <h2>O que é apagado</h2>
+  <p>Pelo aplicativo, na hora. Por e-mail, em até 5 dias depois do pedido.</p>
+  <div class="caixa perigo">
+    <ul>
+      <li><strong>Seu cadastro:</strong> nome, número de WhatsApp e o e-mail da Conta Google.</li>
+      <li><strong>O acesso ao seu Google Drive:</strong> devolvemos a autorização ao Google e a apagamos do nosso lado.</li>
+      <li><strong>Os lembretes de vencimento</strong> e a anotação dos avisos enviados, em todos os celulares.</li>
+      <li><strong>As listas internas no seu Drive:</strong> o índice de busca, as contas marcadas como pagas, as correções e as perguntas pendentes. Seus documentos não são tocados.</li>
+      <li><strong>A entrada no aplicativo</strong>, em todos os celulares.</li>
+    </ul>
+    <p>
+      Se mandar mensagem para o Cadê o Doc de novo depois disso, você recebe o convite para criar uma conta nova, como
+      quem nunca usou.
+    </p>
+  </div>
+
+  <h2>O que fica, e por quanto tempo</h2>
+  <ul>
+    <li>
+      <strong>Seus documentos, no seu Google Drive.</strong> A pasta do Cadê o Doc continua lá, com os seus documentos.
+      São seus, e só você decide se apaga.
+    </li>
+    <li>
+      <strong>Registro de acesso ao aplicativo</strong> (data, hora, endereço de internet e porta de conexão): 6 meses, porque o Marco
+      Civil da Internet obriga a guardá-lo. Fica sob sigilo e só é entregue por ordem judicial.
+    </li>
+    <li>
+      <strong>Registro técnico do serviço</strong> (número de WhatsApp, data, hora e tipo de ação, sem o conteúdo dos
+      documentos): até completar 6 meses, e depois é apagado.
+    </li>
+    <li>
+      <strong>Registro de cobrança</strong>, se você foi assinante (número do pedido na Google Play, data, plano e
+      valor): 5 anos contados do ano seguinte, pela legislação tributária.
+    </li>
+    <li>
+      <strong>Cópias de segurança:</strong> substituídas em até 30 dias, e com isso os dados excluídos deixam de existir
+      também nelas.
+    </li>
+  </ul>
+  <p>
+    Se quiser, você também pode conferir e retirar o acesso de aplicativos direto na sua Conta Google, em
+    <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+    Retirar por lá tira o acesso ao Drive, mas não exclui sua conta do Cadê o Doc.
+  </p>
+  <p>Mais detalhes na <a href="privacidade.html">Política de Privacidade</a>.</p>
+
+  <footer>
+    <p>
+      <a href="index.html">Voltar para a página inicial</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="privacidade.html">Política de Privacidade</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="termos.html">Termos de Serviço</a>
+    </p>
+    <p class="empresa">
+      ACSY ENGENHARIA LTDA &nbsp;|&nbsp; CNPJ 68.392.643/0001-61<br>
+      Rua Blumenau, 178, sala 309, Centro, Joinville, SC, CEP 89.204-250<br>
+      gcs.cadeodoc@gmail.com
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>

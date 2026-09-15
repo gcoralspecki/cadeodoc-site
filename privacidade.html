@@ -117,6 +117,15 @@
     tr { border-bottom: 1px solid var(--linha); padding: 12px 0; display: block; }
     td:first-child { font-weight: 600; color: var(--tinta); }
   }
+  .tabela-dados td:first-child { width: 27%; }
+  .tabela-dados td:nth-child(3) { width: 15%; }
+  /* Tabela de dados: no celular os titulos somem, entao Base e Prazo ganham rotulo. */
+  @media (max-width: 620px) {
+    .tabela-dados td:nth-child(n) { width: auto; }
+    .tabela-dados td:nth-child(3)::before { content: "Base na LGPD: "; font-weight: 600; }
+    .tabela-dados td:nth-child(4)::before { content: "Prazo: "; font-weight: 600; }
+    .tabela-papeis td:nth-child(3)::before { content: "Papel: "; font-weight: 600; }
+  }
 </style>
 </head>
 <body>
@@ -126,196 +135,394 @@
   <header>
     <a class="cabeca" href="index.html"><img src="icone-192.png" alt="" width="40" height="40" class="selo"><img src="logotipo-claro.svg" alt="Cadê o Doc" width="176" height="20" class="logotipo"></a>
     <h1>Política de Privacidade</h1>
-    <p class="datas">Versão 1. Vigente desde 05/09/2026.</p>
+    <p class="datas">Versão 2. Vigente desde 15/09/2026.</p>
   </header>
 
   <div class="resumo">
     <h2>O essencial, em cinco linhas</h2>
     <ul>
-      <li><strong>Seus documentos ficam no seu Google Drive</strong>, não em servidor nosso.</li>
-      <li>O app só enxerga <strong>os arquivos e pastas que ele mesmo criou</strong>. O resto do seu Drive é invisível para nós.</li>
-      <li>Guardamos o mínimo para o serviço funcionar: <strong>seu nome, seu número de WhatsApp</strong> e a autorização de acesso.</li>
-      <li><strong>Não vendemos seus dados</strong> e <strong>não treinamos inteligência artificial</strong> com seus documentos.</li>
-      <li>Você pode pedir <strong>a exclusão de tudo a qualquer momento</strong>, e seus arquivos continuam no seu Drive.</li>
+      <li><strong>Seus documentos ficam no seu Google Drive</strong>, não em servidor nosso, e o app só enxerga <strong>os arquivos e pastas que ele mesmo criou</strong>.</li>
+      <li>Guardamos o mínimo para o serviço funcionar: <strong>nome, número de WhatsApp, e-mail da Conta Google</strong> e a autorização de acesso ao Drive, além dos registros que a lei manda guardar.</li>
+      <li><strong>Não vendemos seus dados</strong>, não enviamos seus documentos a inteligência artificial de terceiros e <strong>não treinamos inteligência artificial</strong> com eles.</li>
+      <li>Ao <strong>excluir a conta</strong>, seu cadastro é apagado na hora. Ficam apenas registros exigidos por lei, por prazo fixo, e seus documentos continuam no seu Drive.</li>
+      <li>Para qualquer pedido sobre seus dados, escreva para <strong>gcs.cadeodoc@gmail.com</strong>.</li>
     </ul>
   </div>
 
   <h2>1. Quem é o responsável</h2>
   <p>
-    O Cadê o Doc é operado por <strong>ACSY ENGENHARIA LTDA</strong>, inscrita no CNPJ sob o
+    O Cadê o Doc é oferecido por <strong>ACSY ENGENHARIA LTDA</strong>, inscrita no CNPJ sob o
     nº 68.392.643/0001-61, com sede na Rua Blumenau, 178, sala 309, Centro, Joinville, Santa
     Catarina, CEP 89.204-250.
   </p>
   <p>
-    Para os efeitos da Lei nº 13.709/2018, a Lei Geral de Proteção de Dados Pessoais (LGPD),
-    a ACSY Engenharia atua como <strong>controladora</strong> dos dados de cadastro e como
-    <strong>operadora</strong> em relação ao conteúdo dos documentos que você envia, os quais
-    permanecem sob seu controle no seu próprio Google Drive.
+    Para a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018, a LGPD), a ACSY
+    Engenharia é a <strong>controladora</strong> dos dados da sua conta e dos registros descritos
+    no item 2, ou seja, é quem responde por eles.
   </p>
-  <p>Contato para assuntos de privacidade: <a href="mailto:gcs.cadeodoc@gmail.com">gcs.cadeodoc@gmail.com</a></p>
+  <p>
+    Sobre o <strong>conteúdo dos documentos</strong> que você envia, também respondemos pelo
+    tratamento, e ele se limita ao que cumpre o seu pedido:
+  </p>
+  <ul>
+    <li>o arquivo inteiro passa pelo nosso servidor e é lido por programa, só durante o processamento, e depois é descartado;</li>
+    <li>do texto lido, o serviço identifica o tipo e a data do documento e, nos boletos, o valor, o vencimento e o banco, e escolhe um nome e uma pasta;</li>
+    <li>esses dados, com um trecho do texto lido de até 3 mil caracteres para a busca, ficam num índice guardado no seu próprio Google Drive, e não no nosso servidor.</li>
+  </ul>
+  <p>
+    Não usamos esse conteúdo para nenhum fim próprio, não o vendemos, não treinamos inteligência
+    artificial com ele e não guardamos cópia.
+  </p>
+  <p>
+    Por ser agente de tratamento de pequeno porte, a ACSY Engenharia não é obrigada a indicar um
+    encarregado de dados (Resolução CD/ANPD nº 2/2022, art. 11). O canal para qualquer assunto
+    de privacidade, seu ou da Autoridade Nacional de Proteção de Dados (ANPD), é
+    <a href="mailto:gcs.cadeodoc@gmail.com">gcs.cadeodoc@gmail.com</a>.
+  </p>
 
-  <h2>2. Quais dados tratamos</h2>
-  <table>
+  <h2>2. Quais dados tratamos, por quê e por quanto tempo</h2>
+  <p>
+    A coluna "Base na LGPD" diz qual autorização da lei permite cada uso. "Contrato" é o
+    art. 7º, inciso V: o dado é necessário para prestar o serviço que você pediu. "Obrigação
+    legal" é o inciso II. "Interesse legítimo" é o inciso IX.
+  </p>
+  <table class="tabela-dados">
     <tr>
       <th>Dado</th>
       <th>Para que serve</th>
+      <th>Base na LGPD</th>
+      <th>Por quanto tempo</th>
     </tr>
     <tr>
-      <td>Nome e número de telefone do WhatsApp</td>
-      <td>Reconhecer de quem é a mensagem que chegou e responder no lugar certo. Sem isso o serviço não sabe de quem é o documento.</td>
+      <td>Nome e número de WhatsApp</td>
+      <td>Reconhecer de quem é a mensagem e responder no lugar certo.</td>
+      <td>Contrato</td>
+      <td>Enquanto a conta existir</td>
     </tr>
     <tr>
-      <td>Endereço de e-mail</td>
-      <td>Avisos sobre a conta, cobrança e recuperação de acesso.</td>
+      <td>E-mail da Conta Google</td>
+      <td>Entrar no aplicativo e avisos sobre a conta.</td>
+      <td>Contrato</td>
+      <td>Enquanto a conta existir</td>
     </tr>
     <tr>
       <td>Autorização de acesso ao seu Google Drive</td>
-      <td>Criar as pastas e gravar os documentos na sua conta. É uma credencial, guardada de forma protegida e separada do restante do cadastro.</td>
+      <td>Criar as pastas e gravar os documentos na sua conta. Guardada cifrada e separada do cadastro.</td>
+      <td>Contrato</td>
+      <td>Até você desconectar o Drive ou excluir a conta</td>
+    </tr>
+    <tr>
+      <td>Sessão do aplicativo</td>
+      <td>Manter você conectado sem pedir login toda vez.</td>
+      <td>Contrato</td>
+      <td>Até 90 dias, ou até você sair</td>
+    </tr>
+    <tr>
+      <td>Inscrição para lembretes no celular</td>
+      <td>Enviar os avisos de vencimento, só se você ativar.</td>
+      <td>Contrato</td>
+      <td>Até você desligar os lembretes</td>
+    </tr>
+    <tr>
+      <td>Anotação dos avisos já enviados</td>
+      <td>Não mandar o mesmo lembrete duas vezes.</td>
+      <td>Contrato</td>
+      <td>Até 45 dias depois do vencimento da conta</td>
     </tr>
     <tr>
       <td>Conteúdo dos documentos enviados</td>
-      <td>Reconhecer o tipo do documento, extrair dados como valor e vencimento de boletos, e permitir que você encontre o arquivo depois.</td>
+      <td>Reconhecer o tipo do documento, ler valor e vencimento, dar nome e guardar.</td>
+      <td>Contrato</td>
+      <td>No nosso servidor, só durante o processamento. Depois, apenas no seu Drive</td>
     </tr>
     <tr>
-      <td>Registro do que foi arquivado</td>
-      <td>Índice de busca. Fica gravado no seu próprio Google Drive, junto dos seus arquivos.</td>
+      <td>Código de cada mensagem recebida</td>
+      <td>Não processar a mesma mensagem duas vezes.</td>
+      <td>Contrato</td>
+      <td>7 dias</td>
     </tr>
     <tr>
-      <td>Suas correções</td>
-      <td>Quando você diz "guardou no lugar errado", registramos a associação para acertar na próxima vez. É uma contagem, não um perfil sobre você.</td>
+      <td>Índice de busca, lista de contas pagas, suas correções e perguntas pendentes</td>
+      <td>Encontrar documentos, mostrar a aba A pagar e acertar onde guardar da próxima vez.</td>
+      <td>Contrato</td>
+      <td>No seu próprio Google Drive, até você excluir a conta, quando são apagados</td>
+    </tr>
+    <tr>
+      <td>Registro de acesso ao aplicativo: data, hora, endereço de internet (IP) e porta de conexão</td>
+      <td>Cumprir o art. 15 do Marco Civil da Internet e o art. 15-A do Decreto nº 8.771/2016, que inclui a porta. Guardado sob sigilo e entregue somente nos casos da lei, com ordem judicial.</td>
+      <td>Obrigação legal</td>
+      <td>6 meses, inclusive depois da exclusão da conta</td>
+    </tr>
+    <tr>
+      <td>Registro técnico do serviço: número de WhatsApp, data, hora e tipo de ação, sem o conteúdo dos documentos</td>
+      <td>Segurança e investigação de falhas.</td>
+      <td>Interesse legítimo</td>
+      <td>6 meses</td>
+    </tr>
+    <tr>
+      <td>Registro de cobrança, quando houver assinatura: número do pedido na Google Play, data, plano e valor</td>
+      <td>Obrigações fiscais (Código Tributário Nacional, arts. 173 e 195) e defesa em eventual reclamação (Código de Defesa do Consumidor, art. 27).</td>
+      <td>Obrigação legal e exercício regular de direitos</td>
+      <td>5 anos contados do ano seguinte ao da cobrança</td>
+    </tr>
+    <tr>
+      <td>Cópia de segurança do cadastro, da autorização cifrada e dos lembretes</td>
+      <td>Recuperar o serviço em caso de falha do servidor. Guardada em computador da empresa, com acesso restrito, e a autorização do Drive vai cifrada.</td>
+      <td>Interesse legítimo (segurança)</td>
+      <td>Substituída em até 30 dias</td>
     </tr>
   </table>
+  <p>
+    Nome, número de WhatsApp, e-mail e a autorização do Drive são indispensáveis: sem eles o
+    serviço não consegue saber de quem é o documento nem onde guardá-lo. Os lembretes no celular
+    são opcionais, e sem eles o restante funciona igual.
+  </p>
 
-  <h2>3. Onde os documentos ficam</h2>
+  <h2>3. Dados de outras pessoas dentro dos documentos</h2>
+  <p>
+    Um boleto traz o nome de quem recebe; um contrato traz as partes. Esses dados são tratados
+    com base no interesse legítimo (art. 7º, inciso IX, da LGPD), com estas salvaguardas:
+  </p>
+  <ul>
+    <li>eles só são lidos porque estão no documento que você pediu para guardar;</li>
+    <li>o serviço <strong>não monta cadastro nem perfil dessas pessoas</strong> e não usa esses dados para nenhum outro fim;</li>
+    <li>o documento e o trecho de texto da busca ficam apenas no seu Drive, e não são compartilhados;</li>
+    <li>quem aparece num documento continua com os direitos que a LGPD lhe dá, e pode exercê-los pelo mesmo e-mail de privacidade.</li>
+  </ul>
+  <p>
+    Um documento também pode trazer, sem que o serviço procure, um dado pessoal sensível, como
+    uma informação de saúde num recibo médico. O serviço não extrai nem usa esse tipo de dado:
+    o documento é apenas lido para ser identificado e guardado no seu Drive, a seu pedido,
+    para o exercício regular de direitos, inclusive em contrato (art. 11, inciso II, alínea "d",
+    da LGPD).
+  </p>
+
+  <h2>4. Onde os documentos ficam</h2>
   <div class="caixa">
     <p>
       <strong>No seu Google Drive.</strong> O serviço cria pastas na sua conta e grava os
       arquivos lá. Não mantemos cópia dos seus documentos em servidor próprio.
     </p>
     <p>
-      Durante o processamento, o arquivo passa pelo nosso servidor pelo tempo necessário
-      para ser reconhecido e gravado no seu Drive, e é descartado em seguida.
+      Durante o processamento, o arquivo passa pelo nosso servidor, que fica no Brasil, pelo
+      tempo necessário para ser reconhecido e gravado no seu Drive, e é descartado em seguida.
     </p>
   </div>
-  <p>
-    A autorização que pedimos ao Google é a de escopo <strong>restrito a arquivos do
-    aplicativo</strong> (<code>drive.file</code>). Na prática, isso significa que o serviço
-    enxerga somente os arquivos e pastas que ele próprio criou. Documentos, fotos e planilhas
-    que já existiam no seu Drive permanecem inacessíveis para nós.
-  </p>
 
-  <h2>4. Uso limitado dos dados do Google</h2>
+  <h2>5. Os dados que recebemos do Google</h2>
+  <h3>Quais dados acessamos</h3>
   <p>
-    O uso das informações recebidas das APIs do Google pelo Cadê o Doc obedece à
-    <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de Dados do Usuário dos Serviços de API do Google</a>,
-    incluindo os requisitos de <strong>Uso Limitado</strong>. Em particular:
+    Pedimos ao Google uma única permissão, a mais restrita para arquivos
+    (<code>drive.file</code>): o serviço enxerga <strong>somente os arquivos e pastas que ele
+    próprio criou</strong> no seu Drive, e o endereço de e-mail da conta. Documentos, fotos e
+    planilhas que já existiam no seu Drive permanecem inacessíveis para nós.
   </p>
-  <ul>
-    <li>Usamos os dados apenas para fornecer as funções descritas nesta política e na página do produto.</li>
-    <li>Não transferimos esses dados a terceiros, exceto quando necessário para prestar o serviço, por exigência legal ou com o seu consentimento expresso.</li>
-    <li>Não usamos esses dados para publicidade.</li>
-    <li><strong>Não usamos esses dados para desenvolver, treinar ou aperfeiçoar modelos de inteligência artificial</strong>, próprios ou de terceiros.</li>
-    <li>Nenhuma pessoa lê seus documentos, salvo quando você pedir suporte e autorizar, quando exigido por lei ou para investigar violação de segurança.</li>
-  </ul>
-
-  <h2>5. Como o reconhecimento funciona</h2>
+  <h3>Para que usamos</h3>
   <p>
-    O reconhecimento de documentos é feito por <strong>regras e leitura de texto no nosso
-    próprio servidor</strong>. Não enviamos seus documentos a serviços de inteligência
-    artificial de terceiros.
+    Apenas para as funções que você vê no aplicativo e no WhatsApp: criar a pasta do Cadê o Doc,
+    gravar e dar nome aos documentos, manter o índice de busca e a lista de contas, mostrar os
+    documentos a você e identificar a sua conta.
+  </p>
+  <h3>Com quem compartilhamos</h3>
+  <p>
+    Com ninguém, exceto quando necessário para prestar o serviço, por exigência legal ou com o
+    seu consentimento expresso. Nunca para publicidade.
+  </p>
+  <h3>Como guardamos</h3>
+  <p>
+    A autorização fica cifrada, separada do cadastro, e é apagada quando você desconecta o Drive
+    ou exclui a conta. Os arquivos ficam no seu Drive.
+  </p>
+  <h3>Como retirar o acesso</h3>
+  <p>
+    No aplicativo, em Conta, Desconectar o Drive, ou na sua Conta Google, em
+    <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+  </p>
+  <h3>Uso limitado</h3>
+  <div class="caixa">
+    <p>
+      O uso e a transferência, para qualquer outro aplicativo, das informações recebidas das APIs
+      do Google obedecem à
+      <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de Dados do Usuário dos Serviços de API do Google</a>,
+      incluindo os requisitos de <strong>Uso Limitado</strong>. Os dados recebidos do Google
+      <strong>não são usados para desenvolver, treinar ou aperfeiçoar modelos de inteligência
+      artificial</strong>, próprios ou de terceiros.
+    </p>
+    <p>
+      Ninguém da ACSY Engenharia abre ou lê seus documentos: não guardamos cópia, e o acesso ao
+      seu Drive é feito só pelo programa. As únicas exceções são você pedir ajuda e autorizar
+      expressamente que olhemos um documento específico, ou uma ordem da autoridade competente
+      nos casos da lei.
+    </p>
+  </div>
+  <p>O Cadê o Doc não é patrocinado nem endossado pelo Google.</p>
+
+  <h2>6. Como o reconhecimento funciona</h2>
+  <p>
+    O reconhecimento de documentos é feito <strong>no nosso próprio servidor</strong>. Não
+    enviamos seus documentos a serviços de inteligência artificial de terceiros.
   </p>
   <p>
     Quando o serviço não tem certeza sobre um documento, ele <strong>pergunta a você</strong>
     em vez de decidir sozinho. Depois de algumas respostas iguais, ele passa a repetir a sua
-    decisão e informa que está fazendo isso, para que você possa corrigir.
+    decisão e informa que está fazendo isso. Você pode corrigir onde um documento foi guardado a
+    qualquer momento. Se uma decisão tomada só de forma automatizada afetar os seus interesses,
+    você pode pedir a revisão dela por e-mail (art. 20 da LGPD).
   </p>
 
-  <h2>6. Com quem compartilhamos</h2>
-  <table>
+  <h2>7. Com quem compartilhamos</h2>
+  <p>
+    Na coluna "Papel", <strong>operadora</strong> é quem trata o dado em nosso nome e seguindo
+    as nossas instruções; <strong>independente</strong> é quem presta um serviço próprio a você,
+    sob a política de privacidade dele.
+  </p>
+  <table class="tabela-papeis">
     <tr>
       <th>Quem</th>
       <th>O que recebe, e por quê</th>
+      <th>Papel</th>
     </tr>
     <tr>
-      <td>Google (Google Drive)</td>
-      <td>Os documentos que você envia, para gravá-los na sua própria conta. O tratamento pelo Google segue a política de privacidade dele.</td>
+      <td>Google (Google Drive e login)</td>
+      <td>Os documentos que você envia, para gravá-los na sua própria conta, e a sua identificação no login.</td>
+      <td>Independente: o Drive e a Conta Google são serviços que o Google presta a você</td>
+    </tr>
+    <tr>
+      <td>Google (Google Play)</td>
+      <td>A compra, a cobrança, o cancelamento e o reembolso da assinatura.</td>
+      <td>Independente</td>
     </tr>
     <tr>
       <td>Meta (WhatsApp Business Platform)</td>
-      <td>As mensagens trocadas entre você e o serviço passam pela infraestrutura do WhatsApp, como em qualquer conversa do aplicativo.</td>
+      <td>As mensagens trocadas entre você e o serviço, que passam pela infraestrutura do WhatsApp.</td>
+      <td>Operadora, nos termos da Meta para empresas</td>
     </tr>
     <tr>
-      <td>Provedor de hospedagem</td>
-      <td>Hospeda o servidor que processa as mensagens, sob contrato e obrigação de confidencialidade.</td>
+      <td>Magalu Cloud</td>
+      <td>Hospeda, no Brasil, o servidor que processa as mensagens.</td>
+      <td>Operadora</td>
+    </tr>
+    <tr>
+      <td>Serviço de notificação do seu celular ou navegador (Google, Apple ou Mozilla)</td>
+      <td>Entrega os lembretes de vencimento, se você os ativar.</td>
+      <td>Independente</td>
     </tr>
     <tr>
       <td>Autoridades públicas</td>
-      <td>Somente mediante ordem judicial ou requisição legal válida.</td>
+      <td>Somente nos casos previstos em lei, mediante ordem judicial ou requisição legal válida.</td>
+      <td>Independente</td>
     </tr>
   </table>
   <p><strong>Não vendemos, alugamos nem cedemos seus dados para fins publicitários ou comerciais de terceiros.</strong></p>
 
-  <h2>7. Por quanto tempo guardamos</h2>
-  <ul>
-    <li><strong>Documentos:</strong> ficam no seu Drive pelo tempo que você quiser. Não temos cópia.</li>
-    <li><strong>Cadastro e credenciais:</strong> enquanto sua conta estiver ativa. Após o cancelamento, são apagados em até 30 dias.</li>
-    <li><strong>Registros de acesso:</strong> mantidos por 6 meses, conforme o art. 15 da Lei nº 12.965/2014, o Marco Civil da Internet.</li>
-    <li><strong>Dados fiscais de pagamentos:</strong> pelo prazo exigido pela legislação tributária.</li>
-  </ul>
+  <h2>8. Transferência para fora do Brasil</h2>
+  <p>
+    O nosso servidor fica no Brasil. Alguns dados saem do país porque o serviço usa empresas
+    estrangeiras: os documentos e o e-mail da conta vão para o Google Drive; as mensagens passam
+    pelo WhatsApp, da Meta; a compra da assinatura passa pela Google Play; e os lembretes, pelo
+    serviço de notificação do seu aparelho. Essas empresas podem guardar e processar os dados em
+    servidores fora do Brasil, conforme a infraestrutura de cada uma.
+  </p>
+  <p>
+    Essas transferências são necessárias para executar o contrato que você pediu, que usa o seu
+    próprio Google Drive e o WhatsApp (art. 33, inciso IX, combinado com o art. 7º, inciso V, da
+    LGPD). Não transferimos dados para fora do Brasil com nenhuma outra finalidade.
+  </p>
 
-  <h2>8. Seus direitos</h2>
+  <h2>9. Exclusão da conta e o que fica</h2>
+  <p>
+    Você pode excluir sua conta a qualquer momento, pelo aplicativo (em Conta, Excluir minha
+    conta) ou por e-mail. O passo a passo está na página
+    <a href="excluir-conta.html">Excluir sua conta</a>.
+  </p>
+  <h3>É apagado</h3>
+  <p>Pelo aplicativo, na hora. Por e-mail, em até 5 dias depois do pedido.</p>
+  <ul>
+    <li>seu cadastro: nome, número de WhatsApp e e-mail da Conta Google;</li>
+    <li>a autorização de acesso ao seu Google Drive, que é devolvida ao Google;</li>
+    <li>as sessões do aplicativo, em todos os aparelhos;</li>
+    <li>os lembretes de vencimento e a anotação dos avisos enviados;</li>
+    <li>as listas internas que o serviço criou no seu Drive (índice de busca, contas marcadas como pagas, correções e perguntas pendentes), apagadas antes de devolvermos o acesso ao Google. Se o Google não responder na hora, alguma delas pode sobrar na pasta do Cadê o Doc, e você pode apagá-la pelo próprio Drive.</li>
+  </ul>
+  <p>Se você for assinante, a assinatura na Google Play é cancelada junto com a conta.</p>
+  <h3>Fica, pelo prazo e pelo motivo indicados</h3>
+  <ul>
+    <li><strong>Seus documentos, no seu Google Drive.</strong> São seus, e a exclusão não mexe neles.</li>
+    <li><strong>Registro de acesso ao aplicativo</strong> (data, hora, IP e porta de conexão): 6 meses, por obrigação do Marco Civil da Internet.</li>
+    <li><strong>Registro técnico do serviço</strong>: até completar 6 meses.</li>
+    <li><strong>Registro de cobrança</strong>, se você foi assinante: 5 anos contados do ano seguinte, pela legislação tributária.</li>
+    <li><strong>Cópias de segurança</strong>: substituídas em até 30 dias, e com isso os dados excluídos deixam de existir também nelas.</li>
+  </ul>
+  <p>
+    Desconectar o Drive é diferente de excluir a conta: desconectando, a conta continua existindo
+    e o serviço apenas deixa de guardar documentos até você conectar de novo.
+  </p>
+
+  <h2>10. Seus direitos</h2>
   <p>A LGPD garante a você, a qualquer momento e sem custo, o direito de:</p>
   <ul>
     <li>confirmar se tratamos seus dados e acessá-los;</li>
     <li>corrigir dados incompletos, inexatos ou desatualizados;</li>
     <li>pedir a anonimização, o bloqueio ou a eliminação de dados desnecessários ou tratados em desconformidade com a lei;</li>
-    <li>solicitar a portabilidade dos seus dados;</li>
-    <li>revogar a autorização de acesso ao seu Google Drive, o que pode ser feito também diretamente na sua Conta Google;</li>
-    <li>eliminar os dados tratados com base no seu consentimento;</li>
+    <li>solicitar a portabilidade dos seus dados, nos termos da regulamentação da ANPD e respeitados os segredos comercial e industrial;</li>
     <li>saber com quem compartilhamos seus dados;</li>
-    <li>opor-se a um tratamento que considere irregular.</li>
+    <li>pedir a revisão de decisões tomadas unicamente de forma automatizada;</li>
+    <li>retirar a autorização de acesso ao seu Google Drive;</li>
+    <li>opor-se a um tratamento que considere irregular;</li>
+    <li>apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).</li>
   </ul>
   <div class="caixa">
     <p>
-      Para exercer qualquer um deles, escreva para
-      <a href="mailto:gcs.cadeodoc@gmail.com">gcs.cadeodoc@gmail.com</a>.
-      Respondemos em até <strong>15 dias</strong>.
+      Na aba <strong>Conta</strong> do aplicativo você vê e corrige na hora os dados da sua conta.
+      Para os demais pedidos, escreva para
+      <a href="mailto:gcs.cadeodoc@gmail.com">gcs.cadeodoc@gmail.com</a>. Confirmamos o
+      recebimento e respondemos nestes prazos:
     </p>
+    <ul>
+      <li>exclusão da conta e cancelamento: até <strong>5 dias</strong>;</li>
+      <li>confirmação de que tratamos seus dados e acesso a eles: até <strong>15 dias</strong>;</li>
+      <li>os demais pedidos: nos prazos da LGPD e da regulamentação da ANPD.</li>
+    </ul>
     <p>
-      <strong>Ao cancelar, seus arquivos continuam no seu Drive, onde sempre estiveram.</strong>
-      Apagamos o cadastro e a credencial de acesso; os documentos são seus e permanecem com você.
+      Para proteger você, antes de atender um pedido podemos confirmar que ele veio de fato do
+      dono da conta, por uma mensagem no WhatsApp cadastrado ou, se você não tiver mais esse
+      número, pelo e-mail da Conta Google ligada à conta.
     </p>
   </div>
 
-  <h2>9. Segurança</h2>
+  <h2>11. Segurança</h2>
   <ul>
-    <li>Todo o tráfego entre você, o WhatsApp, o nosso servidor e o Google usa conexão criptografada.</li>
-    <li>As credenciais de acesso ao Drive são guardadas de forma protegida e separada do cadastro comum.</li>
-    <li>O acesso ao servidor é restrito e registrado.</li>
-    <li>Pedimos ao Google a permissão mais restrita que atende à finalidade, e não uma permissão ampla.</li>
+    <li>Usamos conexão criptografada em todos os trechos sob o nosso controle, e os mecanismos de segurança oferecidos pelo WhatsApp e pelo Google nos trechos que dependem deles.</li>
+    <li>A autorização de acesso ao Drive é guardada cifrada e separada do cadastro.</li>
+    <li>O acesso ao servidor é restrito.</li>
+    <li>Pedimos ao Google a permissão mais restrita que atende à finalidade.</li>
   </ul>
   <p>
-    Se ocorrer um incidente de segurança com risco relevante aos seus dados, comunicaremos
-    você e a Autoridade Nacional de Proteção de Dados, conforme o art. 48 da LGPD.
+    Nenhum sistema é totalmente imune a falhas. Se ocorrer um incidente de segurança que possa
+    trazer risco ou dano relevante a você, comunicaremos você e a ANPD em até 3 dias úteis,
+    conforme o art. 48 da LGPD e a Resolução CD/ANPD nº 15/2024.
   </p>
 
-  <h2>10. Menores de idade</h2>
+  <h2>12. Menores de idade</h2>
   <p>
-    O serviço é destinado a profissionais e não se dirige a menores de 18 anos. Não coletamos
-    intencionalmente dados de crianças e adolescentes.
+    O serviço é destinado a maiores de 18 anos. Não coletamos intencionalmente dados de crianças
+    e adolescentes, e a conta de quem tiver menos de 18 anos é excluída quando identificada.
   </p>
 
-  <h2>11. Mudanças nesta política</h2>
+  <h2>13. Mudanças nesta política</h2>
   <p>
     Se esta política mudar, a nova versão será publicada nesta mesma página, com nova data de
-    vigência. Mudanças relevantes serão comunicadas pelo WhatsApp ou por e-mail antes de
-    entrarem em vigor.
+    vigência. Mudanças relevantes serão comunicadas pelo WhatsApp ou por e-mail com pelo menos
+    30 dias de antecedência. Se a mudança for de finalidade, de base legal ou de com quem
+    compartilhamos, você será avisado antes, de forma específica, e, quando a lei exigir, pediremos
+    o seu consentimento.
   </p>
 
   <footer>
     <p>
       <a href="index.html">Voltar para a página inicial</a> &nbsp;&nbsp;|&nbsp;&nbsp;
-      <a href="termos.html">Termos de Serviço</a>
+      <a href="termos.html">Termos de Serviço</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="excluir-conta.html">Excluir sua conta</a>
     </p>
     <p class="empresa">
       ACSY ENGENHARIA LTDA &nbsp;|&nbsp; CNPJ 68.392.643/0001-61<br>
